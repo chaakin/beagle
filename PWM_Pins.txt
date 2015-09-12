@@ -1,0 +1,8 @@
+PWM2B = "P8_13"
+PWM2A = "P8_19"
+PWM1A = "P9_14"
+PWM0 = "P9_42"
+PWM1B = "P9_16"
+PWM0B = "P9_21"
+PWM0A = "P9_22"
+PWM2 = "P9_28"

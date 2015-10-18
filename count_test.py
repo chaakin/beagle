@@ -1,15 +1,12 @@
-import Adafruit_BBIO.GPIO as GPIO
 import time
 import os
- 
-GPIO.setup("P8_14", GPIO.OUT)
 
 count = 0
-
 while True:
 
     if os.path.isfile('stop_blink.txt'):
-        GPIO.output("P8_14", GPIO.LOW)
+#        GPIO.output("P8_14", GPIO.LOW)
+        print('LOW')
         time.sleep(0.5)
         count = 0
 
@@ -23,12 +20,15 @@ while True:
             else:
                 ### Execute play_mp3.py in background if its not already running
                 print('Starting to play some random music now. .')
-                os.system('python play_mp3.py &')
-            count = 0
 
-        GPIO.output("P8_14", GPIO.HIGH)
+            count = 0
+        
+#        GPIO.output("P8_14", GPIO.HIGH)
+        print('HIGH')
         time.sleep(0.7)
-        GPIO.output("P8_14", GPIO.LOW)
+#        GPIO.output("P8_14", GPIO.LOW)
+        print('LOW')
         time.sleep(0.7)
+
         count += 1.4
         print('Current Count:%s' % count)

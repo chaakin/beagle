@@ -28,7 +28,7 @@ def switch():
             pm_pid = os.popen("ps ax | grep python | grep play_mp3 | grep -v grep | awk '{print $1}'").read()
             os.system('kill -9 %s' % pm_pid)
             os.system('killall mpg321')
-            time.sleep(0.2)
+            time.sleep(1)
 
             os.system("mpg321 Percy_Have_Mercy.mp3")
 

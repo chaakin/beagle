@@ -2,8 +2,8 @@ import Adafruit_BBIO.GPIO as GPIO
 import time
 import os
  
-GPIO.setup("P8_14", GPIO.OUT)
-GPIO.setup("P8_10", GPIO.OUT)
+GPIO.setup("P8_14", GPIO.OUT)  # LED in arm switch
+GPIO.setup("P8_10", GPIO.OUT)  # LED hat/shocker
 GPIO.output("P8_10", GPIO.LOW)
 
 count = 0

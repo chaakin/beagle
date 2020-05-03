@@ -2,10 +2,10 @@ import Adafruit_BBIO.GPIO as GPIO
 import time
 import os
  
-GPIO.setup("P8_11", GPIO.IN)
+GPIO.setup("P8_11", GPIO.IN)   # Arm switch
 
 # Make sure main LEDs are off!
-GPIO.setup("P8_10", GPIO.OUT)
+GPIO.setup("P8_10", GPIO.OUT)  # LED hat/shocker
 GPIO.output("P8_10", GPIO.LOW)
  
 old_switch_state = 0
@@ -29,6 +29,9 @@ def switch():
             os.system('kill -9 %s' % pm_pid)
             os.system('killall mpg321')
             time.sleep(1)
+
+            # Set system volume to MAX!!!
+            os.system("amixer set 'Speaker' 100%")
 
             os.system("mpg321 Percy_Have_Mercy.mp3")
 
